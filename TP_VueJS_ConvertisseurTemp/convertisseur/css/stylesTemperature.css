@@ -1,0 +1,14 @@
+
+body {
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+}
+fieldset {
+    width:300px;
+    margin: auto;
+}
+legend{
+
+  font-weight: bold;
+
+}

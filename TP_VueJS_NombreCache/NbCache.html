@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Nombre Cache </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="css/NbCache.css" rel="stylesheet" type="text/css"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>      
+    </head>
+    <body>
+      
+            <legend>Nombre Inconnu</legend>
+        <div id="monApli">
+            <div>
+                <p>Trouvez 3 tentatives une nombre au plus un nombre inconnu compris entre 0 et 10</p>
+            </div>
+            <div v-if="!(reussite||abandon||echec)">
+            Votre proposition : <input type="text" v-model="valeurSoumise" size="3" />
+            </div>
+            <div class="resultat" >
+                <p v-if="coupRate"> {{valeurSoumise}} est trop {{CompNbr}} ,<br> il vous reste {{NbrTentativeRest}} tentative .Rejouez</p>
+                <p v-if="reussite" style="color:green;"> Bravo !! <br> vous avez gagnez en {{3-NbrTentativeRest}} essais </p>
+                <p v-if="echec"> Vous avez perdu <br> le nombre caché etait {{valeurInc}} </p>
+                <p v-if="abandon"> Pourquoi abandonner ? <br> Le nombre caché etait {{valeurInc}} </p>
+
+            </div>
+            <div>
+               <br><br>
+            <button v-on:click="jouer()" v-if="!(reussite||abandon||echec)">Jouer</button>
+            <button v-on:click="abandonner()" v-if="!(reussite||abandon||echec)">Abondonner </button>
+            <button v-on:click="rejouer()" v-if="(reussite||abandon||echec)">Rejouer</button>
+              
+            </div>  
+        </div>
+       
+        <script src="js/NbCache.js"></script>
+    </body>
+</html>

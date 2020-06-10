@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Convertisseur de temperatures JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="css/stylesTemperature.css" rel="stylesheet" type="text/css"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>      
+    </head>
+    <body>
+        <fieldset>
+            <legend>Convertisseur de temperatures</legend>
+        <div id="monApli">
+            <input type="text" v-model="valeurC" size="3" /> °C
+            <button v-on:click="toFahrenheit()">=></button>
+            <button v-on:click="toCelsius()"><= </button>
+            <input type="text" v-model="valeurF" size="3" /> °F    
+        </div>
+        </fieldset>
+        <script src="js/temperature.js"></script>
+    </body>
+</html>
+
