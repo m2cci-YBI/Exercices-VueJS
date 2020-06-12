@@ -5,7 +5,7 @@ new Vue({
         valeurSoumise :0,
         NbrTentativeRest :3,
         CompNbr: "petit",
-        jeuxEncour:false,
+        
         coupRate :false,
         reussite:false,
         abandon:false,
@@ -29,7 +29,7 @@ new Vue({
         this.valeurSoumise=0;
         this.NbrTentativeRest=3;
         this.CompNbr="petit";
-        this.jeuxEncour=false;
+        
         this.coupRate =false;
         this.reussite=false;
         this.abandon=false;
@@ -49,14 +49,14 @@ new Vue({
 
        jouer:function(){
 
-        this.NbrTentativeRest--; 
-
+         
+  
         if(this.NbrTentativeRest){    
 
            if(!this.verifierValeur()){
             this.reussite=true;
             this.coupRate=false;
-            this.jeuxEncour=false;
+            ;
            }else if(this.verifierValeur()>0){
             this.coupRate=true;
             this.CompNbr="grand";
@@ -68,11 +68,22 @@ new Vue({
         this.echec=true;
         this.coupRate=false;
         this.reussite=false;
-        this.jeuxEncour=false;}
+        }
+
+       this.NbrTentativeRest--; 
+       //resolution bug
+       if(this.NbrTentativeRest==0 && this.verifierValeur()){
+       	this.echec=true;
+        this.coupRate=false;
+        this.reussite=false;
+        
+       }
+
+
         } 
 
-       
-
+      
+         
       }
         
 
