@@ -16,7 +16,7 @@
                 <p>Trouvez 3 tentatives une nombre au plus un nombre inconnu compris entre 0 et 10</p>
             </div>
             <div v-if="!(reussite||abandon||echec)">
-            Votre proposition : <input type="text" v-model="valeurSoumise" size="3" />
+            Votre proposition : <input ref="maValeur" type="text" value="" size="3" />
             </div>
             <div class="resultat" >
                 <p v-if="coupRate"> {{valeurSoumise}} est trop {{CompNbr}} ,<br> il vous reste {{NbrTentativeRest}} tentative .Rejouez</p>
